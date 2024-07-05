@@ -1,0 +1,133 @@
+.header {
+    @include flex-layout(center);
+    height: max(60px, 3vw);
+    flex-direction: column;
+    background-color: $bg--gray;
+    border-bottom: 1px solid $clr--border;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index : 1;
+    // The navbar's style
+    .navbar {
+        @extend %container;
+        @include flex-layout(space-between, center, 10px);
+
+        .logo {
+            @include flex-layout(center, center, 10px);
+
+            img {
+                width: max(75px, calc(5vw + 50px));
+
+            }
+
+            &--hover-img {
+                display: none;
+            }
+
+            &:hover {
+                .logo--hover-img {
+                    display: block;
+                }
+
+                .logo--img {
+                    display: none;
+                }
+            }
+        }
+
+        .menu-icon {
+            width: 2.4rem;
+            aspect-ratio: 1 /1;
+            cursor: pointer;
+            position: relative;
+
+            .menu-line,
+            .menu-line::after,
+            .menu-line::before {
+                width: 20px;
+                height: 2px;
+                background-color: $bg--menuIcon;
+                content: "";
+                position: absolute;
+                left: 0;
+                transition : all 0.3s linear 0s;
+            }
+
+            .menu-line {
+                top: 11px;
+                left: 2px;
+
+                &::after {
+                    top: 7px;
+                }
+
+                &::before {
+                    top: -7px;
+                }
+            }
+
+        }
+
+        .content {
+            @include flex-layout(space-between, center, 16px);
+            flex-direction: column;
+            position: absolute;
+            top: calc(100% + 1px);
+            left: 0;
+            right: 0;
+            background-color: $clr--tertiary;
+            box-shadow: 0 10px 27px rgba(0, 0, 0, .05);
+            display: none;
+            font-weight: 300;
+
+            .menu {
+                @include flex-layout(space-between, flex-start, 0px);
+                @extend %container;
+                flex-direction: column;
+                color: $clr--menu;
+                font-size : max(15px , calc(0.6vw + 2px));
+
+                &--item {
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                }
+
+                &--link:hover {
+                    color: $clr--secondary;
+                }
+
+            }
+
+            .app-download-link {
+                background-color: $clr--secondary;
+                color : $clr--tertiary;
+                padding : 0.8rem 2.5em;
+                display: none;
+                &:hover{
+                    transform: scale(0.98);               
+                }
+            }
+            
+        }
+    }
+    // The navbar's style when the button of menu is clicked
+    #handle-menu:checked+.navbar {
+        .menu-line {
+            background-color: transparent;
+
+            &::after {
+                transform: rotateZ(45deg);
+                top :0;
+            }
+            &::before {
+                transform: rotateZ(-45deg);
+                top :0;
+
+            }
+        }
+        .content{
+            display: flex;
+        }
+    }
+}

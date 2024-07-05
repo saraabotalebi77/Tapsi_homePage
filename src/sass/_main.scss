@@ -1,0 +1,383 @@
+.main {
+    .features-tapsi {
+        height: max-content;
+        margin-bottom: 4rem;
+
+        .container {
+            @include flex-layout(center);
+            position: relative;
+            height: max-content;
+            background-image: url("../assets/images/banner-mobile.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .content {
+            flex-grow: 1;
+            background-image: linear-gradient(51deg, rgba(23, 26, 60, .7) 5%, rgba(23, 26, 60, .3) 95%);
+            padding: 2rem;
+            color: $clr--tertiary;
+        }
+
+        .main-title {
+            font-size: max(18px, calc(2.5vw + 10pX));
+        }
+
+        .main-description {
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        .btns-wrapper {
+            margin-top: 3rem;
+        }
+
+        .btn {
+            margin-bottom: 1.2rem;
+            justify-content: flex-start;
+            gap: 10px;
+            flex-grow: 1;
+            font-size: 1.2rem;
+        }
+
+        .download-app-passenger,
+        .web-app-passenger {
+            background-color: $clr--tertiary;
+            color: $clr--primary;
+
+            &:hover {
+                color: rgba(0, 0, 0, 0.85);
+            }
+        }
+
+        .register-car-driver,
+        .register-motorcycle-driver,
+        .download-app-drivers {
+            border: 2px solid currentColor;
+
+            &:hover {
+                color: rgba(255, 255, 255, 0.85);
+            }
+        }
+
+        .img-bg {
+            width: max(350px, 25vw);
+            aspect-ratio: 2 / 3;
+            display: none;
+            position: absolute;
+            bottom: min(-200px, -15vw);
+        }
+    }
+
+    .services-tapsi {
+        @extend %container;
+        @include flex-layout(flex-start, stretch, 20px);
+        flex-direction: column;
+        margin-bottom: 5rem;
+
+        .slider {
+            @include flex-layout(flex-start, stretch, 40px);
+            flex-direction: column;
+            flex-grow: 1;
+            overflow: hidden;
+
+            &--items {
+                @include flex-layout(space-between, center, 5px);
+                padding-bottom: 1rem;
+                overflow: auto;
+
+                .item {
+                    @include flex-layout(center, center, 10px);
+                    flex-direction: column;
+                    cursor: pointer;
+
+                    &--img {
+                        width: 90px;
+                        opacity: 0.35;
+                    }
+
+                    &--text {
+                        font-size: 1.2rem;
+                        color: $clr--slider-title;
+                    }
+
+                    &:hover,
+                    &.active {
+                        .item--img {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            &--slides {
+                @include flex-layout(flex-start);
+                flex-grow: 1;
+
+                .slide {
+                    @include flex-layout(space-between, flex-start, 40px);
+                    min-width: 100%;
+                    min-height: 100%;
+                    background-color: $clr--tertiary;
+                    padding-bottom: 3rem;
+                    border-bottom: 1px solid $clr--border;
+
+                    &--content {
+                        flex-grow: 10;
+                    }
+
+                    &--title {
+                        font-size: max(16px, calc(1.5vw + 8px));
+                        font-weight: 400;
+                        margin-bottom: 2rem;
+                    }
+
+                    &--img {
+                        display: none;
+                        min-width: 40%;
+                        max-width: 40%;
+                        aspect-ratio: 3 /2;
+                        flex-grow: 1;
+
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .tapsi-for-business,
+    .tapsi-credit-code {
+        @extend %container;
+        @include flex-layout(flex-start, stretch, 30px);
+        flex-direction: column;
+        margin-bottom: 5rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+
+        .img-wrapper,
+        .content {
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        .img-wrapper {
+            font-size: 0;
+
+            img {
+                width: 100%;
+                aspect-ratio: 5/3;
+            }
+        }
+
+        .content {
+            @include flex-layout(flex-start, flex-start, 15px);
+            flex-direction: column;
+
+        }
+
+        .title {
+            margin-bottom: 0rem;
+        }
+
+        .description {
+            text-align: justify;
+        }
+
+        .btn {
+            background-color: $clr--secondary;
+            color: $clr--tertiary;
+
+            &:hover {
+                opacity: 0.95;
+            }
+        }
+    }
+
+    .tapsi-for-business {
+        .img-wrapper {
+            img {
+                padding-right: 4rem;
+                padding-left: 0rem;
+            }
+        }
+
+        .more-info-link {
+            font-size: 1.3rem;
+            word-spacing: -1px;
+            color: $clr--secondary;
+            @include flex-layout(flex-start, center, 4px);
+        }
+    }
+
+    .tapsi-credit-code {
+        .img-wrapper {
+            img {
+                padding-right: 2rem;
+                padding-left: 2rem;
+            }
+        }
+    }
+
+    .tapis-other-services {
+        margin-bottom: 5rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+
+        .content {
+            @extend %container;
+            @include flex-layout(center, center, 20px);
+            flex-direction: column;
+            min-height: 22rem;
+            height: max-content;
+            background-image: url("../assets/images/parallax.jpeg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: $clr--tertiary;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .service--description {
+            display: none;
+        }
+
+        .service {
+            text-align: center;
+
+            &:hover .service--description {
+                display: block;
+                font-size: max(14px, calc(1vw + 2px));
+            }
+        }
+
+        .service--title {
+            font-size: max(15px, calc(1vw + 5px));
+            margin-bottom: 0.8rem;
+        }
+
+    }
+
+    .tapsi-advantages {
+        @include flex-layout(flex-start, center, 30px);
+        @extend %container;
+        flex-direction: column;
+        margin-bottom: 5rem;
+        padding-bottom: 4rem;
+
+        img {
+            width: 100%;
+            aspect-ratio: 3/2;
+            border-radius: 1rem;
+        }
+
+        .content {
+            width: 100%;
+            color: $clr--benefits-section-text;
+        }
+
+        .title {
+            color: $clr--primary;
+        }
+
+        .menu-wrapper {
+            margin-top: 5rem;
+        }
+
+        .menu-title {
+            margin-bottom: 1.6rem;
+            font-size: max(15px, calc(1vw + 6px));
+            font-weight: 400;
+        }
+
+        .menu-item {
+            list-style-type: decimal;
+            list-style-position: inside;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+        }
+
+        .btns-wrapper {
+            @include flex-layout(center, center, 10px);
+            flex-direction: column;
+            margin-top: 4rem;
+
+            .btn {
+                min-width: 200px;
+                background-color: $clr--forth;
+                color: $clr--tertiary;
+            }
+        }
+
+    }
+
+    .tapsi-weblogs {
+        @extend %container;
+        margin-bottom : 4rem;
+        padding-top : 3rem;
+        padding-bottom : 3rem;
+
+        .card-wrapper {
+            @include flex-layout(flex-start, flex-start, 15px);
+            flex-direction: column;
+        }
+
+        .card {
+            flex-grow: 1;
+            padding: 2rem;
+
+            &:hover {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            }
+        }
+
+        .card--img {
+            width: 100%;
+            aspect-ratio: 3 /2;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card--title {
+            font-size: max(15px, calc(1vw + 6px));
+            color: $clr--text;
+            margin-bottom: 1rem;
+        }
+
+        .card--description {
+            color: $clr--weblog-description;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+
+    .tapsi-inIran{
+        @extend %container;
+        padding-top : 4rem;
+        padding-bottom : 4rem;
+        background-color: $bg--gray;
+        background-image: url("../assets/images/map-back.svg") ;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: none;
+        .cities{
+            @include flex-layout(flex-start,flex-start);
+            flex-wrap : wrap;
+            font-size: max(15px , 1vw);
+        }
+        .city{
+            @include flex-layout(flex-start,flex-start);
+            flex-direction: column;
+            width : calc(100% / 5);
+            padding : 0.25rem 0.5rem;
+        }
+        .city-En{
+            letter-spacing: 1px;
+        }
+    }
+}

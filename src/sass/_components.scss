@@ -1,0 +1,27 @@
+.btn {
+    @include flex-layout(center, center, 7px);
+    border-radius: 1rem;
+    font-size: max(15px, calc(0.6vw + 2px));
+    font-weight: 300;
+    padding: 1.4rem 2rem;
+    cursor: pointer;
+}
+
+.title {
+    font-size: max(16px, calc(1.5vw + 10px));
+    margin-bottom: 2rem;
+}
+
+.description {
+    font-size: 15px;
+    font-weight: 300;
+    color : $clr--text;
+    @media only screen and (min-width:768px){
+        font-size : 17px;
+
+    }
+    @media only screen and (min-width:1600px){
+        font-size : 21px;
+
+    }
+}

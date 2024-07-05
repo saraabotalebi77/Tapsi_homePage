@@ -1,0 +1,322 @@
+// The styles elements when the web page size is greater than or equal to 320px
+@media only screen and (min-width:320px) {
+    .main {
+        .features-tapsi {
+            .container {
+                padding: 3rem 1.4rem;
+                align-items: flex-start;
+            }
+
+            .content {
+                border-radius: 1rem;
+                flex-grow: 0;
+            }
+
+            .btn {
+                font-size: 14px
+            }
+        }
+    }
+}
+
+// The styles elements when the web page size is greater than or equal to 576px
+@media only screen and (min-width:576px) {
+    .header {
+        padding: 0 2rem;
+    }
+
+    .main {
+        .features-tapsi {
+            .container {
+                padding: 3rem 2.5rem;
+            }
+
+            .main-description {
+                font-size: max(16px, calc(1.25vw + 3pX));
+            }
+
+            .btn {
+                font-size: 15px
+            }
+        }
+
+        .services-tapsi {
+            .slider {
+                &--items {
+                    .item {
+                        &--text {
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// The styles elements when the web page size is greater than or equal to 768px
+@media only screen and (min-width:768px) {
+    .header {
+        padding: 0;
+
+        .navbar {
+            .menu-icon {
+                display: none;
+            }
+
+            .content {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                background-color: transparent;
+                box-shadow: none;
+
+                .menu {
+                    flex-direction: row;
+                    gap: 1rem;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .main {
+        .features-tapsi {
+            min-height: calc(100vh - max(60px, 3vw));
+
+            .container {
+                justify-content: space-between;
+                align-items: flex-end;
+                min-height: 74vh;
+                background-image: url("../assets/images/banner.jpg");
+                padding: 3rem min(150px, calc(3vw * 2 + 30px));
+            }
+
+            .btns-wrapper {
+                display: grid;
+                grid-template-columns: repeat(4, auto);
+                grid-template-rows: repeat(3, auto);
+            }
+
+            .download-app-passenger {
+                grid-column: 1 / 3;
+                grid-row: 1 / 2;
+                margin-left: 0.6rem;
+            }
+
+            .web-app-passenger {
+                grid-column: 3 / 5;
+                grid-row: 1 /2;
+                margin-right: 0.6rem;
+            }
+
+            .register-car-driver {
+                grid-column: 1 / 3;
+                grid-row: 2 / 3;
+                margin-left: 0.6rem;
+            }
+
+            .register-motorcycle-driver {
+                grid-column: 3 / 5;
+                grid-row: 2 / 3;
+                margin-right: 0.6rem;
+            }
+
+            .download-app-drivers {
+                grid-column: 2 / 4;
+                grid-row: 3 / 4;
+            }
+        }
+
+        .services-tapsi {
+            .slider {
+                &--slides {
+                    .slide {
+                        &--img {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        .tapsi-for-business,
+        .tapsi-credit-code {
+            justify-content: space-between;
+            gap: 50px;
+
+            .img-wrapper,
+            .content {
+                min-width: calc(50% - 25px);
+                max-width: calc(50% - 25px);
+            }
+        }
+
+        .tapsi-for-business {
+            flex-direction: row-reverse;
+        }
+
+        .tapsi-credit-code {
+            flex-direction: row;
+        }
+
+        .tapis-other-services {
+            .content {
+                flex-direction: row;
+                justify-content: space-around;
+                gap: 0;
+                min-height: 18rem;
+            }
+
+            .service {
+                max-width: calc(100% / 4);
+                min-width: calc(100% / 4);
+                padding: 0 0.8rem;
+                position: relative;
+
+                &:not(:first-child)::after {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 2px;
+                    height: 40px;
+                    background-color: $clr--tertiary;
+                }
+            }
+        }
+        .tapsi-advantages {
+            img {
+                min-width : 75%;
+                max-width : 75%;                
+            }
+        }
+        .tapsi-weblogs{
+            .card-wrapper{
+                flex-direction: row;
+                align-items : stretch;
+            }
+        }
+        .tapsi-inIran{
+            display : block;
+        }
+    }
+
+    .footer{
+        .copy-right{
+            display : block;
+        }
+        .mobile-copy-right{
+            display: none;
+        }
+        &--row:first-child{
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap : wrap;
+            .footer--col{
+              max-width : max(200px , calc(20%));
+              min-width : max(200px , calc(20%));
+            }
+
+        }
+        &--row:nth-child(2){
+            justify-content: flex-start;
+        }
+        &--row:last-child{
+            .title{
+                margin-bottom : 0.5rem;
+                display: block;
+            }
+            .social-networks{
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+// The styles elements when the web page size is greater than or equal to 992px
+@media only screen and (min-width:992px) {
+    .header {
+        .navbar {
+            .content {
+                .app-download-link {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    .main {
+        .features-tapsi {
+            padding-bottom: max(120px, calc(15vw - 80px));
+            margin-bottom: 0;
+
+            .img-bg {
+                display: block;
+                left: calc(min(150px, calc(3vw * 2 + 30px)) + 30px);
+            }
+        }
+        .tapsi-advantages{
+            flex-direction: row-reverse;
+            align-items: flex-start;
+            gap : 50px;
+            img,
+            .content{
+                min-width : calc(50% - 25px);
+                max-width : calc(50% - 25px);
+            }
+            .btns-wrapper{
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+        }
+        .tapsi-inIran{
+            .city{
+                width : calc(100% / 7);
+            }
+        }
+    }
+
+}
+
+// The styles elements when the web page size is greater than or equal to 1600px
+@media only screen and (min-width:1600px) {
+    .main {
+        .features-tapsi {
+            .content {
+                padding: 3rem;
+            }
+
+            .main-description {
+                font-size: 2.5rem;
+            }
+        }
+
+        .services-tapsi {
+            .slider {
+                &--items {
+                    .item {
+                        &--img {
+                            width: calc(2vw + 110px);
+                        }
+
+                        &--text {
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+
+                &--slides {
+                    .slide {
+                        gap: 80px;
+                    }
+                }
+            }
+
+        }
+    }
+}
